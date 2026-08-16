@@ -1,0 +1,9 @@
+{
+  "name": "pastel-pocket-expense",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mobile-first pastel expense tracker with local auto-save.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

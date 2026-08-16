@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" role="img" aria-labelledby="title desc">
+  <title id="title">Floral savings artwork</title>
+  <desc id="desc">A soft floral and notebook illustration in warm pastel colors.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8ef"/>
+      <stop offset="100%" stop-color="#ffe4bf"/>
+    </linearGradient>
+    <linearGradient id="flower" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f9cbd5"/>
+      <stop offset="100%" stop-color="#dfb8f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="300" rx="36" fill="#fff0d7"/>
+  <circle cx="64" cy="58" r="18" fill="#fff7ea"/>
+  <circle cx="302" cy="82" r="26" fill="#f7dcb0"/>
+  <path d="M0 234c62-34 134-41 215-16 67 20 116 20 145 11v71H0z" fill="#f4b86b"/>
+  <rect x="118" y="116" width="124" height="92" rx="18" fill="url(#paper)" stroke="#e0a464" stroke-width="4"/>
+  <rect x="136" y="96" width="88" height="28" rx="14" fill="#f7c77d"/>
+  <rect x="146" y="138" width="70" height="10" rx="5" fill="#dfa053"/>
+  <rect x="146" y="158" width="64" height="10" rx="5" fill="#dfa053" opacity="0.9"/>
+  <rect x="146" y="178" width="50" height="10" rx="5" fill="#dfa053" opacity="0.8"/>
+  <path d="M112 186c-28 4-51 21-69 52" fill="none" stroke="#7fa16d" stroke-width="7" stroke-linecap="round"/>
+  <path d="M67 236c10-18 25-31 45-39" fill="none" stroke="#7fa16d" stroke-width="5" stroke-linecap="round"/>
+  <path d="M85 184c14-18 33-27 58-28" fill="none" stroke="#7fa16d" stroke-width="5" stroke-linecap="round"/>
+  <path d="M245 190c17 16 27 37 30 63" fill="none" stroke="#7fa16d" stroke-width="6" stroke-linecap="round"/>
+  <path d="M263 204c17-6 33-4 49 7" fill="none" stroke="#7fa16d" stroke-width="4" stroke-linecap="round"/>
+  <path d="M128 152c10-28 34-40 55-29-2 18-9 31-22 39-10 6-21 8-33 5z" fill="url(#flower)"/>
+  <path d="M214 148c-4-24 9-45 31-54 13 13 16 29 8 46-7 15-20 25-39 30z" fill="url(#flower)"/>
+  <path d="M260 224c-6-21 2-38 24-49 13 8 18 21 15 38-4 16-17 28-39 36z" fill="url(#flower)"/>
+  <path d="M62 250c28 7 58 6 89-1" fill="none" stroke="#cc8743" stroke-width="4" stroke-linecap="round"/>
+</svg>

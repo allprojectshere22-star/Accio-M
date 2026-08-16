@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" role="img" aria-labelledby="title desc">
+  <title id="title">Warm planner scene</title>
+  <desc id="desc">A warm pastel illustration of a planner, coins, and a character with a pencil.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff0d8"/>
+      <stop offset="100%" stop-color="#f7b964"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffaf0"/>
+      <stop offset="100%" stop-color="#ffe3b7"/>
+    </linearGradient>
+    <linearGradient id="coin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4d38f"/>
+      <stop offset="100%" stop-color="#d99a3d"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="420" rx="48" fill="url(#bg)"/>
+  <circle cx="85" cy="96" r="18" fill="#fff5df" opacity="0.9"/>
+  <circle cx="474" cy="76" r="26" fill="#ffd698" opacity="0.7"/>
+  <path d="M0 356c95-40 177-46 263-20s187 26 297-8v92H0z" fill="#f3af56"/>
+  <rect x="62" y="226" width="190" height="42" rx="14" fill="#d29a52"/>
+  <rect x="92" y="182" width="200" height="46" rx="14" fill="#e8b36b"/>
+  <rect x="124" y="134" width="202" height="50" rx="14" fill="#f6ca85"/>
+  <text x="95" y="252" font-family="Trebuchet MS, sans-serif" font-size="26" fill="#6d4b23">ideas</text>
+  <text x="128" y="212" font-family="Trebuchet MS, sans-serif" font-size="24" fill="#7b5526">plan</text>
+  <text x="159" y="166" font-family="Trebuchet MS, sans-serif" font-size="22" fill="#84592a">execution</text>
+  <rect x="336" y="140" width="154" height="114" rx="22" fill="url(#card)" stroke="#e2af65" stroke-width="4"/>
+  <rect x="358" y="162" width="110" height="12" rx="6" fill="#f0c57d"/>
+  <rect x="358" y="188" width="92" height="12" rx="6" fill="#f0c57d" opacity="0.85"/>
+  <rect x="358" y="214" width="78" height="12" rx="6" fill="#f0c57d" opacity="0.72"/>
+  <circle cx="405" cy="302" r="42" fill="url(#coin)"/>
+  <circle cx="405" cy="302" r="26" fill="#f7ebc8"/>
+  <path d="M200 138c32-38 70-40 101-8 20 20 24 45 12 74-10 24-30 41-61 48-21 5-40-1-55-18-16-18-21-38-14-60 4-15 10-27 17-36z" fill="#f2c596"/>
+  <path d="M226 114c6-18 21-30 44-35 19-4 35 1 49 15-2 16-10 27-23 34-16 9-38 10-70 4z" fill="#b96f36"/>
+  <circle cx="255" cy="136" r="5" fill="#3c2b21"/>
+  <path d="M245 156c13 8 28 9 45 2" fill="none" stroke="#8f4e2c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M182 182l92-22 16 30-92 22z" fill="#f3c470"/>
+  <path d="M284 160l95-54 13 22-95 54z" fill="#d88b4d"/>
+  <path d="M378 106l54-29 12 20-52 31z" fill="#f0d2aa"/>
+  <path d="M218 213c28-4 48 8 58 36l8 62h-34l-8-56c-4-14-13-22-26-24z" fill="#e2a058"/>
+  <path d="M208 218l-22 57-38 36 28 10 34-28 22-48z" fill="#d59047"/>
+  <path d="M136 320c20 12 44 16 71 10" fill="none" stroke="#c37a34" stroke-width="5" stroke-linecap="round"/>
+  <path d="M455 302c-14-10-28-10-42 0 14 10 28 10 42 0z" fill="#d99a3d"/>
+  <path d="M66 334c18 9 30 26 36 50" fill="none" stroke="#d88f44" stroke-width="4" stroke-linecap="round"/>
+  <path d="M482 328c12 11 18 24 18 41" fill="none" stroke="#d88f44" stroke-width="4" stroke-linecap="round"/>
+</svg>

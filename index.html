@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#9cb0a8" />
+    <title>Accio M</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="assets/Copy of expense (1).png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="splashScreen" class="splash-screen">
+      <img src="assets/Copy of expense (1).png" alt="Accio M" class="splash-logo" />
+    </div>
+
+    <div class="backdrop backdrop-one"></div>
+    <div class="backdrop backdrop-two"></div>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="headerDate">Today</p>
+          <h1>Accio M</h1>
+        </div>
+        <button class="avatar-badge" id="quickAddTop" type="button" aria-label="Open settings">
+          S
+        </button>
+      </header>
+
+      <main class="content">
+        <section class="view active" data-view="overview">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Overview</p>
+              <h2>Your Money</h2>
+            </div>
+            <button class="ghost-button" id="jumpToEntries" type="button">All</button>
+          </div>
+
+          <div class="panel story-hero">
+            <div class="story-copy">
+              <p class="eyebrow">Today</p>
+              <h3>Good Morning</h3>
+              <p class="hero-date" id="heroDateLabel"></p>
+              <p class="subtle-note" id="heroExpenseLine"></p>
+            </div>
+            <div class="hero-schedule-card">
+              <p class="eyebrow">Budget Left</p>
+              <strong id="heroBudgetValue"></strong>
+              <span id="heroBudgetLine"></span>
+            </div>
+            <img class="story-art" src="assets/planner-scene.svg" alt="Warm planner illustration" />
+          </div>
+
+          <div class="summary-track" id="summaryCards"></div>
+
+          <div class="chip-row" id="categoryChips"></div>
+
+          <div class="panel latest-panel">
+            <div class="panel-head">
+              <h3>Recent</h3>
+              <button class="ghost-icon" id="addExpenseInline" type="button" aria-label="Add expense">
+                +
+              </button>
+            </div>
+            <div class="entry-list" id="latestEntries"></div>
+          </div>
+        </section>
+
+        <section class="view" data-view="insights">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Total</p>
+              <h2>This Month</h2>
+            </div>
+            <div class="month-switcher">
+              <button class="ghost-icon compact" id="prevMonth" type="button" aria-label="Previous month">
+                &lt;
+              </button>
+              <strong id="monthLabel"></strong>
+              <button class="ghost-icon compact" id="nextMonth" type="button" aria-label="Next month">
+                &gt;
+              </button>
+            </div>
+          </div>
+
+          <div class="panel calendar-panel">
+            <div class="mini-calendar" id="miniCalendar"></div>
+          </div>
+
+          <div class="hero-ring panel">
+            <div class="ring" id="budgetRing">
+              <div class="ring-inner">
+                <strong id="spentAmount"></strong>
+                <span>Spent</span>
+              </div>
+            </div>
+            <p id="budgetMessage"></p>
+          </div>
+
+          <div class="segmented" id="insightToggle">
+            <button class="active" type="button" data-mode="spends">Spends</button>
+            <button type="button" data-mode="categories">Types</button>
+          </div>
+
+          <div class="panel">
+            <div class="entry-list" id="insightList"></div>
+          </div>
+        </section>
+
+        <section class="view" data-view="savings">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Savings</p>
+              <h2>Your Progress</h2>
+            </div>
+            <div class="section-actions">
+              <button class="ghost-icon" id="openGoalSheet" type="button" aria-label="Add goal">+</button>
+              <button class="ghost-button" id="focusGoals" type="button">Settings</button>
+            </div>
+          </div>
+
+          <div class="panel savings-hero">
+            <div class="savings-analytics">
+              <p class="eyebrow">Available Money</p>
+              <h2 id="savingsValue"></h2>
+              <p class="subtle-note">Your total savings</p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">
+              <h3>This Month Target</h3>
+            </div>
+            <div class="goal-card">
+              <div class="goal-header">
+                <p class="eyebrow">Goal</p>
+                <h3 id="goalTargetTitle"></h3>
+              </div>
+              <div class="goal-bar">
+                <span id="goalBarFill"></span>
+              </div>
+              <div class="goal-stats">
+                <div class="stat-item">
+                  <small>Saved</small>
+                  <strong id="goalSavedValue"></strong>
+                </div>
+                <div class="stat-item">
+                  <small>Target</small>
+                  <strong id="goalTargetValue"></strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">
+              <h3>Your Goals</h3>
+              <button class="ghost-icon" id="openGoalSheetInline" type="button" aria-label="Add goal">+</button>
+            </div>
+            <div class="goal-list" id="goalsList"></div>
+          </div>
+        </section>
+
+        <section class="view" data-view="entries">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Entries</p>
+              <h2>All Expenses</h2>
+            </div>
+            <button class="ghost-button" id="clearFilter" type="button">Show All</button>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">
+              <h3>Sort By</h3>
+              <div class="segmented" id="entriesSortToggle">
+                <button class="active" type="button" data-sort="date">Date</button>
+                <button type="button" data-sort="amount">Amount</button>
+                <button type="button" data-sort="category">Type</button>
+              </div>
+            </div>
+            <div class="entry-list" id="allEntries"></div>
+          </div>
+        </section>
+
+        <section class="view" data-view="settings">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Settings</p>
+              <h2>Your Numbers</h2>
+            </div>
+          </div>
+
+          <div class="panel">
+            <form class="settings-form" id="settingsForm">
+              <label>
+                <span>Monthly Budget</span>
+                <input type="number" min="0" step="0.01" name="monthlyBudget" />
+              </label>
+
+              <label>
+                <span>Monthly Salary</span>
+                <input type="number" min="0" step="0.01" name="monthlySalary" />
+              </label>
+
+              <label>
+                <span>Savings Goal</span>
+                <input type="number" min="0" step="0.01" name="savingsTarget" />
+              </label>
+
+              <label>
+                <span>Currency</span>
+                <select name="currency">
+                  <option value="INR">INR</option>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                </select>
+              </label>
+            </form>
+          </div>
+
+          <div class="panel utility-panel">
+            <div class="panel-head">
+              <h3>Backup</h3>
+            </div>
+            <div class="utility-stack">
+              <p class="subtle-note" id="backupStatus">
+                Save your data before deleting app
+              </p>
+              <div class="utility-actions">
+                <button class="ghost-button" id="exportBackupButton" type="button">Save</button>
+                <label class="ghost-button file-trigger" for="importBackupInput">Load</label>
+                <input
+                  class="visually-hidden"
+                  id="importBackupInput"
+                  type="file"
+                  accept="application/json,.json"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="panel utility-panel">
+            <div class="panel-head">
+              <h3>Categories</h3>
+              <button class="ghost-icon" id="openCategorySheet" type="button" aria-label="Add category">+</button>
+            </div>
+            <div class="category-list" id="categoryList"></div>
+          </div>
+
+          <div class="panel utility-panel">
+            <div class="panel-head">
+              <h3>Install App</h3>
+            </div>
+            <div class="utility-stack">
+              <p class="subtle-note" id="installStatus">
+                Install app
+              </p>
+              <button class="ghost-button" id="installAppButton" type="button" disabled>
+                Install
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav">
+        <button class="nav-button active" type="button" data-view-target="overview">
+          <span class="nav-icon"></span>
+          <span>Home</span>
+        </button>
+        <button class="nav-button" type="button" data-view-target="entries">
+          <span class="nav-icon list-icon"></span>
+          <span>List</span>
+        </button>
+        <button class="fab-button" id="openAddExpense" type="button" aria-label="Add expense">+</button>
+        <button class="nav-button" type="button" data-view-target="insights">
+          <span class="nav-icon chart-icon"></span>
+          <span>Total</span>
+        </button>
+        <button class="nav-button" type="button" data-view-target="savings">
+          <span class="nav-icon settings-icon"></span>
+          <span>Save</span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="sheet-backdrop hidden" id="sheetBackdrop"></div>
+    <section class="sheet hidden" id="expenseSheet" aria-hidden="true">
+      <div class="sheet-handle"></div>
+      <div class="sheet-head">
+        <div>
+          <p class="eyebrow" id="sheetModeLabel">New</p>
+          <h2 id="sheetTitle">Add Expense</h2>
+        </div>
+        <button class="ghost-icon" id="closeSheet" type="button" aria-label="Close">
+          x
+        </button>
+      </div>
+
+      <form id="expenseForm" class="expense-form">
+        <input type="hidden" name="expenseId" />
+
+        <label>
+          <span>Title</span>
+          <input type="text" name="title" maxlength="40" placeholder="Groceries" required />
+        </label>
+
+        <div class="split-fields">
+          <label>
+            <span>Amount</span>
+            <input type="number" name="amount" min="0" step="0.01" placeholder="0.00" required />
+          </label>
+
+          <label>
+            <span>Date</span>
+            <input type="date" name="date" required />
+          </label>
+        </div>
+
+        <div class="split-fields">
+          <label>
+            <span>Category</span>
+            <select name="category">
+              <option value="Food">Food</option>
+              <option value="Transport">Transport</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Bills">Bills</option>
+              <option value="Rent">Rent</option>
+              <option value="Health">Health</option>
+              <option value="Leisure">Leisure</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Payment</span>
+            <select name="paymentMethod">
+              <option value="UPI">UPI</option>
+              <option value="Card">Card</option>
+              <option value="Cash">Cash</option>
+              <option value="Bank">Bank</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          <span>Note</span>
+          <textarea name="note" rows="3" maxlength="120" placeholder="Optional"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button class="secondary-action" id="deleteExpenseButton" type="button">Delete</button>
+          <button class="primary-action" type="submit">Save</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="sheet hidden" id="goalSheet" aria-hidden="true">
+      <div class="sheet-handle"></div>
+      <div class="sheet-head">
+        <div>
+          <p class="eyebrow" id="goalSheetModeLabel">New</p>
+          <h2 id="goalSheetTitle">Add Goal</h2>
+        </div>
+        <button class="ghost-icon" id="closeGoalSheet" type="button" aria-label="Close goal form">
+          x
+        </button>
+      </div>
+
+      <form id="goalForm" class="expense-form">
+        <input type="hidden" name="goalId" />
+
+        <label>
+          <span>Goal Name</span>
+          <input type="text" name="name" maxlength="40" placeholder="Emergency fund" required />
+        </label>
+
+        <div class="split-fields">
+          <label>
+            <span>Target</span>
+            <input type="number" name="target" min="0" step="0.01" placeholder="0.00" required />
+          </label>
+
+          <label>
+            <span>Saved</span>
+            <input type="number" name="saved" min="0" step="0.01" placeholder="0.00" value="0" required />
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button class="secondary-action" id="deleteGoalButton" type="button">Delete</button>
+          <button class="primary-action" type="submit">Save</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="sheet hidden" id="categorySheet" aria-hidden="true">
+      <div class="sheet-handle"></div>
+      <div class="sheet-head">
+        <div>
+          <p class="eyebrow" id="categorySheetModeLabel">New</p>
+          <h2 id="categorySheetTitle">Add Category</h2>
+        </div>
+        <button class="ghost-icon" id="closeCategorySheet" type="button" aria-label="Close category form">
+          x
+        </button>
+      </div>
+
+      <form id="categoryForm" class="expense-form">
+        <input type="hidden" name="categoryId" />
+
+        <label>
+          <span>Category Name</span>
+          <input type="text" name="name" maxlength="30" placeholder="Food" required />
+        </label>
+
+        <div class="form-actions">
+          <button class="secondary-action" id="deleteCategoryButton" type="button">Delete</button>
+          <button class="primary-action" type="submit">Save</button>
+        </div>
+      </form>
+    </section>
+
+    <template id="entryTemplate">
+      <article class="entry-card">
+        <div class="entry-badge"></div>
+        <div class="entry-copy">
+          <strong class="entry-title"></strong>
+          <span class="entry-meta"></span>
+          <small class="entry-note"></small>
+        </div>
+        <div class="entry-amounts">
+          <strong class="entry-amount"></strong>
+          <span class="entry-payment"></span>
+          <div class="entry-actions">
+            <button class="tiny-button edit-button" type="button">Edit</button>
+            <button class="tiny-button delete-button" type="button">Delete</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
