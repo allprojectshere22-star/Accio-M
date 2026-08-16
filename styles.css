@@ -44,43 +44,6 @@ body {
     linear-gradient(180deg, #97aba3 0%, var(--page-bg) 100%);
 }
 
-.splash-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(180deg, #97aba3 0%, var(--page-bg) 100%);
-  animation: fade-out 0.5s ease 7s forwards;
-}
-
-.splash-logo {
-  max-width: 200px;
-  max-height: 200px;
-  object-fit: contain;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.splash-screen.hidden {
-  display: none;
-}
-
-@keyframes fade-out {
-  to {
-    opacity: 0;
-    pointer-events: none;
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
 button,
 input,
 textarea,

@@ -1250,13 +1250,4 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-window.addEventListener("load", () => {
-  const splashScreen = document.getElementById("splashScreen");
-  if (splashScreen) {
-    setTimeout(() => {
-      splashScreen.classList.add("hidden");
-    }, 7500);
-  }
-});
-
 render();
